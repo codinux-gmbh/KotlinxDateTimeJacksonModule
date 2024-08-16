@@ -27,7 +27,9 @@ implementation("net.codinux.jackson:kotlinx-datetime-jackson-module:1.0.0")
               "instant" : "2015-10-21T06:07:08.000000009Z",
               "dateTime" : "2015-10-21T06:07:08.000000009",
               "date" : "2015-10-21",
-              "time" : "06:07:08.000000009"
+              "time" : "06:07:08.000000009",
+              "dateTimePeriod" : "P1Y2M3DT4H5M6.000000007S",
+              "datePeriod" : "P1Y2M3D"
             }
         """.trimIndent()
     
@@ -40,7 +42,9 @@ implementation("net.codinux.jackson:kotlinx-datetime-jackson-module:1.0.0")
             Instant.parse("2015-10-21T06:07:08.000000009Z"),
             LocalDateTime(2015, 10, 21, 6, 7, 8, 9),
             LocalDate(2015, 10, 21),
-            LocalTime(6, 7, 8, 9)
+            LocalTime(6, 7, 8, 9),
+            DateTimePeriod(1, 2, 3, 4, 5, 6, 7),
+            DatePeriod(1, 2, 3)
         )
     
         val json = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(toSerialize)

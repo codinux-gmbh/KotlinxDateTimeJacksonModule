@@ -2,10 +2,7 @@ package net.codinux.jackson
 
 import com.fasterxml.jackson.databind.module.SimpleModule
 import com.fasterxml.jackson.module.kotlin.PackageVersion
-import kotlinx.datetime.Instant
-import kotlinx.datetime.LocalDate
-import kotlinx.datetime.LocalDateTime
-import kotlinx.datetime.LocalTime
+import kotlinx.datetime.*
 
 class KotlinxDateTimeModule : SimpleModule(KotlinxDateTimeModule::class.java.name, PackageVersion.VERSION) {
 
@@ -21,6 +18,12 @@ class KotlinxDateTimeModule : SimpleModule(KotlinxDateTimeModule::class.java.nam
 
         addSerializer(LocalTime::class.java, LocalTimeIso8601Serializer())
         addDeserializer(LocalTime::class.java, LocalTimeIso8601Deserializer())
+
+        addSerializer(DateTimePeriod::class.java, DateTimePeriodIso8601Serializer())
+        addDeserializer(DateTimePeriod::class.java, DateTimePeriodIso8601Deserializer())
+
+        addSerializer(DatePeriod::class.java, DatePeriodIso8601Serializer())
+        addDeserializer(DatePeriod::class.java, DatePeriodIso8601Deserializer())
     }
 
 }
