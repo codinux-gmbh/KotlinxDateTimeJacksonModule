@@ -6,9 +6,7 @@ import kotlinx.datetime.LocalDate
 
 class KotlinxDatetimeModule : SimpleModule(KotlinxDatetimeModule::class.java.name, PackageVersion.VERSION) {
 
-    override fun setupModule(context: SetupContext) {
-        super.setupModule(context)
-
+    init {
         addSerializer(LocalDate::class.java, LocalDateIso8601Serializer())
         addDeserializer(LocalDate::class.java, LocalDateIso8601Deserializer())
     }
