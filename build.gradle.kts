@@ -15,6 +15,10 @@ kotlin {
     jvmToolchain(11)
 }
 
+java {
+    withSourcesJar()
+}
+
 
 val kotlinxDatetimeVersion: String by project
 val jacksonVersion: String by project
@@ -31,3 +35,12 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
+
+ext["customArtifactId"] = "kotlinx-datetime-jackson-module"
+
+ext["sourceCodeRepositoryBaseUrl"] = "github.com/codinux/KotlinxDatetimeJacksonModule"
+
+ext["projectDescription"] = "Jackson serializers and deserializers for kotlinx-datetime"
+
+apply(from = "./gradle/scripts/publish-codinux.gradle.kts")
