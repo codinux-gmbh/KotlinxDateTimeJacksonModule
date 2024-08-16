@@ -9,7 +9,7 @@ import kotlin.test.assertNotNull
 
 class LocalDateTimeIso8601DeserializerTest {
 
-    private val underTest = JacksonObjectMapper.mapperWithKotlinxDatetimeModule
+    private val underTest = JacksonObjectMapper.mapperWithKotlinxDateTimeModule
 
 
     @Test

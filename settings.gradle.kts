@@ -16,4 +16,4 @@ plugins {
 }
 
 
-rootProject.name = "KotlinxDatetimeJacksonModule"
+rootProject.name = "KotlinxDateTimeJacksonModule"

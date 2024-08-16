@@ -8,7 +8,7 @@ import kotlin.test.assertEquals
 
 class LocalDateTimeIso8601SerializerTest {
 
-    private val underTest = JacksonObjectMapper.mapperWithKotlinxDatetimeModule
+    private val underTest = JacksonObjectMapper.mapperWithKotlinxDateTimeModule
 
 
     @Test

@@ -39,7 +39,7 @@ tasks.test {
 
 ext["customArtifactId"] = "kotlinx-datetime-jackson-module"
 
-ext["sourceCodeRepositoryBaseUrl"] = "github.com/codinux/KotlinxDatetimeJacksonModule"
+ext["sourceCodeRepositoryBaseUrl"] = "github.com/codinux/KotlinxDateTimeJacksonModule"
 
 ext["projectDescription"] = "Jackson serializers and deserializers for kotlinx-datetime"
 

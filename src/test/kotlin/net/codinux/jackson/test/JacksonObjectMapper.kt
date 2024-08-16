@@ -1,12 +1,12 @@
 package net.codinux.jackson.test
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import net.codinux.jackson.KotlinxDatetimeModule
+import net.codinux.jackson.KotlinxDateTimeModule
 
 object JacksonObjectMapper {
 
-    val mapperWithKotlinxDatetimeModule: ObjectMapper = ObjectMapper().apply {
-        registerModule(KotlinxDatetimeModule())
+    val mapperWithKotlinxDateTimeModule: ObjectMapper = ObjectMapper().apply {
+        registerModule(KotlinxDateTimeModule())
     }
 
 }

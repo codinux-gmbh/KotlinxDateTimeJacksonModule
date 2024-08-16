@@ -7,7 +7,7 @@ import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.LocalTime
 
-class KotlinxDatetimeModule : SimpleModule(KotlinxDatetimeModule::class.java.name, PackageVersion.VERSION) {
+class KotlinxDateTimeModule : SimpleModule(KotlinxDateTimeModule::class.java.name, PackageVersion.VERSION) {
 
     init {
         addSerializer(Instant::class.java, InstantIso8601Serializer())
