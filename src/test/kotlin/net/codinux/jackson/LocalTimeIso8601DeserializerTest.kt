@@ -13,7 +13,7 @@ class LocalTimeIso8601DeserializerTest {
 
 
     @Test
-    fun serialize() {
+    fun deserialize() {
         val isoString = "18:17:13"
 
         val result = underTest.readValue<LocalTimeWrapper>("""{"time":"$isoString"}""")

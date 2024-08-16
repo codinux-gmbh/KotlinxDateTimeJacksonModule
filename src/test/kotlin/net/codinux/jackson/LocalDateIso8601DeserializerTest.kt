@@ -13,7 +13,7 @@ class LocalDateIso8601DeserializerTest {
 
 
     @Test
-    fun serialize() {
+    fun deserialize() {
         val isoString = "2015-10-21"
 
         val result = underTest.readValue<LocalDateWrapper>("""{"date":"$isoString"}""")
