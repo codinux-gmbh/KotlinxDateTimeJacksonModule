@@ -55,6 +55,11 @@ tasks.register("updateVersion") {
             .replace(Regex("""(private const val GroupId = ")[^"]*""""), "$1${project.group}\"")
             .replace(Regex("""(private const val ArtifactId = ")[^"]*""""), "$1${ext["customArtifactId"]}\"")
         versionFile.writeText(updatedContent)
+
+        val readme = file("README.md")
+        val updatedReadmeContent = readme.readText()
+            .replace(Regex("""(implementation\("net\.codinux\.jackson:kotlinx-datetime-jackson-module:)[^"]*""""), "$1$version\"")
+        readme.writeText(updatedReadmeContent)
     }
 }
 
