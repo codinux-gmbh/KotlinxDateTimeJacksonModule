@@ -26,14 +26,40 @@ val jacksonVersion: String by project
 dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:$kotlinxDatetimeVersion")
 
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion")
+    implementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
+
 
     testImplementation(kotlin("test"))
+
+    testImplementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion")
 }
 
 
 tasks.test {
     useJUnitPlatform()
+}
+
+val versionFile = file("src/main/kotlin/net/codinux/jackson/PackageVersion.kt")
+
+tasks.register("updateVersion") {
+    group = "build"
+    description = "Replaces the version in the source code file with the version from build.gradle.kts."
+
+    inputs.file(versionFile)
+    outputs.file(versionFile)
+
+    doLast {
+        val fileContent = versionFile.readText()
+        val updatedContent = fileContent
+            .replace(Regex("""(private const val VersionString = ")[^"]*""""), "$1$version\"")
+            .replace(Regex("""(private const val GroupId = ")[^"]*""""), "$1${project.group}\"")
+            .replace(Regex("""(private const val ArtifactId = ")[^"]*""""), "$1${ext["customArtifactId"]}\"")
+        versionFile.writeText(updatedContent)
+    }
+}
+
+tasks.named("compileKotlin") {
+    dependsOn("updateVersion")
 }
 
 

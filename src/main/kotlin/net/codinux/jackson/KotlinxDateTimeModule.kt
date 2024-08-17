@@ -1,10 +1,9 @@
 package net.codinux.jackson
 
 import com.fasterxml.jackson.databind.module.SimpleModule
-import com.fasterxml.jackson.module.kotlin.PackageVersion
 import kotlinx.datetime.*
 
-class KotlinxDateTimeModule : SimpleModule(KotlinxDateTimeModule::class.java.name, PackageVersion.VERSION) {
+class KotlinxDateTimeModule : SimpleModule(KotlinxDateTimeModule::class.java.name, PackageVersion.Version) {
 
     init {
         addSerializer(Instant::class.java, InstantIso8601Serializer())
