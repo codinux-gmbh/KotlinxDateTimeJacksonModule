@@ -67,6 +67,10 @@ tasks.named("compileKotlin") {
     dependsOn("updateVersion")
 }
 
+tasks.named("sourcesJar") {
+    dependsOn("updateVersion")
+}
+
 
 ext["customArtifactId"] = "kotlinx-datetime-jackson-module"
 
