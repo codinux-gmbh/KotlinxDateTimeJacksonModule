@@ -8,7 +8,7 @@ class PackageVersion : Versioned {
 
     companion object {
         // will be replaced by Gradle
-        private const val VersionString = "1.0.1-SNAPSHOT"
+        private const val VersionString = "1.0.1"
         private const val GroupId = "net.codinux.jackson"
         private const val ArtifactId = "kotlinx-datetime-jackson-module"
 

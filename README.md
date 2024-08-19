@@ -9,7 +9,7 @@ Jackson serializers and deserializers for all kotlinx-datetime types so that Jac
 ### Gradle
 
 ```
-implementation("net.codinux.jackson:kotlinx-datetime-jackson-module:1.0.1-SNAPSHOT")
+implementation("net.codinux.jackson:kotlinx-datetime-jackson-module:1.0.1")
 ```
 
 ## Usage
